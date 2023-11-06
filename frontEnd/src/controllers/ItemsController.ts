@@ -1,6 +1,6 @@
 import { Route, Get, Path, Post, Body } from 'tsoa';
-import { ItemModel as ItemMongooseModel } from '../models/itemSchema';
-import { Item } from '../models/Item';
+import { Item, ItemModel as ItemMongooseModel } from '../models/Item'; 
+
 
 @Route('items')
 export class ItemsController {

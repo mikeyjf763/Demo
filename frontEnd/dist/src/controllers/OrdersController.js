@@ -59,9 +59,8 @@ let OrdersController = class OrdersController {
     createOrder(newOrder) {
         return __awaiter(this, void 0, void 0, function* () {
             const order = new orderSchema_1.OrderModel(newOrder);
-            console.log(order);
-            console.log('hit');
             yield order.save();
+            console.log("order placed!,", order);
         });
     }
 };

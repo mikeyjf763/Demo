@@ -20,11 +20,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ItemsController = void 0;
 const tsoa_1 = require("tsoa");
-const itemSchema_1 = require("../models/itemSchema");
+const Item_1 = require("../models/Item"); // Import both from the same file
 let ItemsController = class ItemsController {
     getProducts() {
         return __awaiter(this, void 0, void 0, function* () {
-            const documents = yield itemSchema_1.ItemModel.find();
+            const documents = yield Item_1.ItemModel.find();
             if (!documents) {
                 throw new Error('No products found');
             }
@@ -40,7 +40,7 @@ let ItemsController = class ItemsController {
     }
     getProduct(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            const document = yield itemSchema_1.ItemModel.findById(id);
+            const document = yield Item_1.ItemModel.findById(id);
             if (!document) {
                 throw new Error('No product found');
             }
@@ -56,7 +56,7 @@ let ItemsController = class ItemsController {
     }
     addProduct(newItem) {
         return __awaiter(this, void 0, void 0, function* () {
-            const item = new itemSchema_1.ItemModel(newItem);
+            const item = new Item_1.ItemModel(newItem);
             try {
                 yield item.save();
             }
