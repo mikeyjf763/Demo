@@ -1,16 +1,24 @@
 import { useState, useEffect } from 'react';
 import styles from '../css/Navbar.module.css';
 import '../css/CartModal.css';
-import { Item } from '@/src/models/Item';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, updateQuantity, removeFromCart } from '../features/cartSlice';
 import { RootState } from '../features/store';
-import { OrderItem } from '../src/models/orderItem';
 import CartModal from './CartModal';
 import OrdersModal from './OrdersModal';
 
+interface Item {
+  _id: string;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+}
 
-
+interface OrderItem {
+  item: Item;
+  quantity: number;
+}
 
 
 export default function Home() {

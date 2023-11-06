@@ -1,7 +1,19 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { updateQuantity, removeFromCart } from '../features/cartSlice';
-import { OrderItem } from '../src/models/orderItem';
+
+interface Item {
+  _id: string;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+}
+
+interface OrderItem {
+  item: Item;
+  quantity: number;
+}
 
 interface CartModalProps {
   cart: OrderItem[];
